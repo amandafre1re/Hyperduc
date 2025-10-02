@@ -11,7 +11,7 @@ document.getElementById('btnLogin').addEventListener('click', async () => {
   const dados = await resposta.json();
 
   if (dados.codigo) {
-    window.location.href = '../perfil/perfil.html';
+    window.location.href = '../index.html';
   } else {
     document.getElementById('erro').innerHTML = `
       <div class="alert alert-danger">${dados.msg}</div>
