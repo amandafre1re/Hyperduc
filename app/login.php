@@ -19,11 +19,7 @@ if ($resultado->num_rows === 1) {
     $usuario = $resultado->fetch_assoc();
 
     if (password_verify($senha, $usuario['senha_usuario'])) {
-        $_SESSION['usuario'] = [
-            'id' => $usuario['id_usuario'],
-            'nome' => $usuario['nome_usuario'],
-            'email' => $usuario['email_usuario']
-        ];
+        $_SESSION['usuario_id'] = $usuario['id_usuario'];
 
         echo json_encode(['codigo' => true, 'msg' => 'Login realizado com sucesso!']);
     } else {
