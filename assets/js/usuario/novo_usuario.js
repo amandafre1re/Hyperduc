@@ -12,7 +12,7 @@ async function usuario_novo() {
     fd.append('uf', document.getElementById("uf").value);
     fd.append('pais', document.getElementById("pais").value);
  
-    const retorno = await fetch('../app/usuario/usuario_novo.php', {
+    const retorno = await fetch('../app/usuario/novo_usuario.php', {
         method: 'POST',
         body: fd
     });

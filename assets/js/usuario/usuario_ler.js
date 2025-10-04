@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const resposta = await fetch('../app/usuario/usuario_ler.php');
   const dados = await resposta.json();
 
