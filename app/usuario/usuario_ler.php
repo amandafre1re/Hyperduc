@@ -28,5 +28,6 @@ if ($resultado->num_rows > 0) {
 
 $stmt->close();
 $conn->close();
+header("Content_type: application/json; charset: utf-8;");
 echo json_encode($resposta);
 ?>

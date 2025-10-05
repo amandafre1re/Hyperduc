@@ -1,5 +1,7 @@
-document.getElementById("btnAtualizarPerfil").addEventListener('click', function () {
-    atualizar_perfil();
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("btnAtualizarConta").addEventListener('click', function () {
+        atualizar_perfil();
+    });
 });
 
 async function atualizar_perfil() {

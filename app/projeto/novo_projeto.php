@@ -21,7 +21,7 @@ if (empty($nome) || empty($descricao)) {
     exit;
 }
 
-$id_usuario = $_SESSION['usuario']['id'];
+$id_usuario = $_SESSION['usuario_id'];
 $data_criacao = date("Y-m-d H:i:s");
 
 $sql = "INSERT INTO projeto (nm_projeto, desc_projeto, data_criacao, id_usuario) VALUES (?, ?, ?, ?)";

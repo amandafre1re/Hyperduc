@@ -25,13 +25,14 @@ $stmt->bind_param("sssssi", $nome, $email, $cidade, $uf, $pais, $id);
 
 if ($stmt->execute()) {
     $resposta['codigo'] = true;
-    $resposta['msg'] = 'Perfil atualizado com sucesso.';
+    $resposta['msg'] = 'Conta atualizada com sucesso.';
 } else {
     $resposta['codigo'] = false;
-    $resposta['msg'] = 'Erro ao atualizar perfil.';
+    $resposta['msg'] = 'Erro ao atualizar conta.';
 }
 
 $stmt->close();
 $conn->close();
+header("Content_type: application/json; charset: utf-8;");
 echo json_encode($resposta);
 ?>

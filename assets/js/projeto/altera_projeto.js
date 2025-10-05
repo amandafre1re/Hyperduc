@@ -1,9 +1,11 @@
 document.getElementById("btnSalvarProjeto").addEventListener("click", async () => {
+  const id = new URLSearchParams(window.location.search).get('id');
   const fd = new FormData();
+  fd.append("id_projeto", id);
   fd.append("nm_projeto", document.getElementById("nm_projeto").value);
   fd.append("desc_projeto", document.getElementById("desc_projeto").value);
 
-  const resp = await fetch('../app/projeto/projeto_novo.php', {
+  const resp = await fetch('../app/projeto/altera_projeto.php', {
     method: 'POST',
     body: fd
   });

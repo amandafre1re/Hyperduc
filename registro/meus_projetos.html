@@ -2,8 +2,9 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Novo Projeto</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Meus Projetos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
@@ -36,20 +37,15 @@
     </div>
   </nav>
   <div class="container mt-5">
-    <h2 class="mb-4">Criar Novo Projeto</h2>
-    <div id="alerta"></div>
-    <div class="mb-3">
-      <label for="nm_projeto" class="form-label">Nome do Projeto</label>
-      <input type="text" class="form-control" id="nm_projeto" required>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="mb-0">Meus Projetos</h2>
+      <a href="novo_projeto.html" class="btn btn-success"><i class="bi bi-plus-lg"></i> Criar Projeto</a>
     </div>
-    <div class="mb-3">
-      <label for="desc_projeto" class="form-label">Descrição</label>
-      <textarea class="form-control" id="desc_projeto" rows="5" required></textarea>
-    </div>
-    <button id="btnSalvarProjeto" class="btn btn-primary">Salvar Projeto</button>
+    <div id="meusProjetos"></div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <script src="../assets/js/projeto/novo_projeto.js"></script>
+  <script src="../assets/js/projeto/meus_projetos.js"></script>
+  <script src="../assets/js/projeto/apaga_projeto.js"></script>
 </body>
 </html>

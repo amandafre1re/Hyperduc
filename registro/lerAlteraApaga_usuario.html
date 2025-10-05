@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Perfil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .perfil-card {
+      max-width: 700px;
+      margin: 40px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      background-color: #fff;
+      padding: 30px;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    #btnExcluirConta {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    #btnExcluirConta:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">HyperDuc</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html"><i class="bi bi-house-door"></i> Início</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-search"></i> Procurar projetos</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle"></i> Minha conta
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#"><i class="bi bi-person-badge"></i> Meus perfis</a></li>
+            <li><a class="dropdown-item" href="./registro/novo_projeto.html"><i class="bi bi-briefcase"></i> Meus projetos</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="./registro/perfil_usuario.html"><i class="bi bi-gear"></i> Configurações de conta</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="perfil-card">
+    <h4 class="mb-4 text-center">Minha conta</h4>
+
+    <div id="alerta"></div>
+
+    <form id="formPerfil">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="nome_usuario" class="form-label">Nome completo</label>
+          <input type="text" class="form-control" id="nome_usuario" required>
+        </div>
+
+        <div class="col-md-6">
+          <label for="email_usuario" class="form-label">E-mail</label>
+          <input type="email" class="form-control" id="email_usuario" readonly>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-5">
+          <label for="cidade" class="form-label">Cidade</label>
+          <input type="text" class="form-control" id="cidade">
+        </div>
+
+        <div class="col-md-4">
+          <label for="uf" class="form-label">Estado (UF)</label>
+          <select class="form-select" id="uf">
+            <option selected hidden>Escolha...</option>
+          <option value="AC">AC</option>
+          <option value="AL">AL</option>
+          <option value="AP">AP</option>
+          <option value="AM">AM</option>
+          <option value="BA">BA</option>
+          <option value="CE">CE</option>
+          <option value="DF">DF</option>
+          <option value="ES">ES</option>
+          <option value="GO">GO</option>
+          <option value="MA">MA</option>
+          <option value="MT">MT</option>
+          <option value="MS">MS</option>
+          <option value="MG">MG</option>
+          <option value="PA">PA</option>
+          <option value="PB">PB</option>
+          <option value="PR">PR</option>
+          <option value="PE">PE</option>
+          <option value="PI">PI</option>
+          <option value="RJ">RJ</option>
+          <option value="RN">RN</option>
+          <option value="RS">RS</option>
+          <option value="RO">RO</option>
+          <option value="RR">RR</option>
+          <option value="SC">SC</option>
+          <option value="SP">SP</option>
+          <option value="SE">SE</option>
+          <option value="TO">TO</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label for="pais" class="form-label">País</label>
+          <input type="text" class="form-control" id="pais" value="Brasil">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between mt-4">
+        <button type="button" id="btnExcluirConta" class="btn">Excluir minha conta</button>
+        <button type="button" id="btnAtualizarConta" class="btn btn-success">Salvar alterações</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/usuario/usuario_ler.js"></script>
+ <script src="../assets/js/usuario/usuario_update.js?v=1"></script>
+ <script src="../assets/js/usuario/usuario_excluir.js?v=2"></script> 
+</body>
+</html>

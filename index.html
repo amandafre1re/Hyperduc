@@ -33,9 +33,9 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="#"><i class="bi bi-person-badge"></i> Meus perfis</a></li>
-            <li><a class="dropdown-item" href="./registro/novo_projeto.html"><i class="bi bi-briefcase"></i> Meus projetos</a></li>
+            <li><a class="dropdown-item" href="./registro/meus_projetos.html"><i class="bi bi-briefcase"></i> Meus projetos</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="./registro/perfil_usuario.html"><i class="bi bi-gear"></i> Configurações de conta</a></li>
+            <li><a class="dropdown-item" href="./registro/lerAlteraApaga_usuario.html"><i class="bi bi-gear"></i> Configurações de conta</a></li>
           </ul>
         </li>
 
@@ -46,6 +46,25 @@
 
   <div class="container mt-5">
     <h1 class="mb-4">Bem-vindo</h1>
+    <h3 class="mb-3">Projetos Recentes</h3>
+    <div id="carouselProjetosWrapper">
+      <div id="carouselProjetos" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carouselProjetosInner"></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjetos" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselProjetos" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/projeto/listar_projetos.js"></script>
+</body>
+</html>
   </div>
 
 
