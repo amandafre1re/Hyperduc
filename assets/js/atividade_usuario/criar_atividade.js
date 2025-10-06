@@ -45,7 +45,8 @@ function showFormCriarAtividade(id_projeto, onSuccess) {
       </form>
     </div>
   `;
-  // Preencher o select de atividades existentes
+
+//Lisntando as atividades
   fetch('../app/atividade/listar_tipos_atividade.php')
     .then(resp => resp.json())
     .then(atividades => {
@@ -76,6 +77,5 @@ function showFormCriarAtividade(id_projeto, onSuccess) {
     });
 }
 
-// Disponibilizar no escopo global
 window.showFormCriarAtividade = showFormCriarAtividade;
 window.criarAtividade = criarAtividade;

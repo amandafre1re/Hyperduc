@@ -31,17 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `;
 
-  // Funções globais para os botões dos cards
-  window.editarAtividade = function(idAtividade) {
-    listarAtividades(id).then(atividades => {
-      const atividade = atividades.find(a => a.atividade_idAtividade == idAtividade);
-      if (!atividade) return alert('Atividade não encontrada.');
-      showFormEditarAtividade(id, atividade, () => renderKanbanAtividades(id));
-    });
-  };
-  window.excluirAtividade = function(idAtividade) {
-    excluirAtividade(id, idAtividade, () => renderKanbanAtividades(id));
-  };
+  // As ações de editar/excluir são fornecidas pelos módulos de atividade (listar/editar/deletar)
 
   // Botão Nova Atividade
   setTimeout(() => {
