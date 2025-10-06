@@ -2,13 +2,7 @@
 session_start();
 include_once '../../app/conexao.php';
 
-if (!isset($_SESSION['usuario_id'])) {
-    http_response_code(401);
-    echo json_encode(['codigo' => false, 'msg' => 'Usuário não logado.']);
-    exit;
-}
-
-$id_usuario = $_SESSION['usuario_id'];
+// Permite visualização pública de projetos por id
 $id_projeto = $_GET['id'] ?? null;
 if (!$id_projeto) {
     http_response_code(400);
@@ -16,9 +10,9 @@ if (!$id_projeto) {
     exit;
 }
 
-$sql = "SELECT id_projeto, nm_projeto, desc_projeto FROM projeto WHERE id_projeto = ? AND id_usuario = ?";
+$sql = "SELECT p.id_projeto, p.nm_projeto, p.desc_projeto, p.data_criacao, u.nome_usuario, p.id_usuario FROM projeto p LEFT JOIN usuario u ON p.id_usuario = u.id_usuario WHERE p.id_projeto = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ii", $id_projeto, $id_usuario);
+$stmt->bind_param("i", $id_projeto);
 $stmt->execute();
 $result = $stmt->get_result();
 $projeto = $result->fetch_assoc();

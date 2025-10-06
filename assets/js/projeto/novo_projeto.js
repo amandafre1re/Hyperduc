@@ -13,6 +13,8 @@ document.getElementById("btnSalvarProjeto").addEventListener("click", async () =
   let msg = "";
   if (dados.codigo) {
     msg = `<div class='alert alert-success'>${dados.msg}</div>`;
+    setTimeout(() => { window.location.href = 'meus_projetos.html'; }, 1200);
+
   } else {
     msg = `<div class='alert alert-danger'>${dados.msg}</div>`;
   }

@@ -1,0 +1,40 @@
+.projeto-card {
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 0 16px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  background: #fff;
+  padding: 32px 28px;
+}
+.projeto-titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.projeto-desc {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.projeto-meta {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #212529;
+  border-radius: 50%;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  width: 3rem;
+  height: 3rem;
+  background-size: 60% 60%;
+  opacity: 0.95;
+}
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: #0d6efd;
+  box-shadow: 0 4px 16px rgba(13,110,253,0.25);
+  opacity: 1;
+}
+

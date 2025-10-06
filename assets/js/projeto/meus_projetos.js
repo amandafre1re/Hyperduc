@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", async () => {
               <h5 class="card-title">${p.nm_projeto}</h5>
               <p class="card-text">${p.desc_projeto}</p>
               <div class="d-flex gap-2 mt-3">
-                <a href="editar_projeto.html?id=${p.id_projeto}" class="btn btn-warning btn-sm">Configurar Projeto</a>
+                <a href="lerAlteraApaga_projeto.html?id=${p.id_projeto}" class="btn btn-warning btn-sm">Configurar Projeto</a>
+                <a href="projeto.html?id=${p.id_projeto}" class="btn btn-primary btn-sm">Entrar</a>
               </div>
             </div>
             <div class="card-footer text-muted small">

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       carouselInner.innerHTML = '<div class="alert alert-info">Nenhum projeto encontrado.</div>';
       return;
     }
-    // Agrupar projetos em slides de 3 cards
+    // carrossel 
     let slides = [];
     for (let i = 0; i < projetos.length; i += 3) {
       slides.push(projetos.slice(i, i + 3));
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <p class="card-text">${p.desc_projeto}</p>
                 <p class="card-text"><small class="text-muted">Criado por: ${p.nome_usuario}</small></p>
                 <div class="d-flex gap-2 mt-3">
-                  <button class="btn btn-primary btn-sm" onclick="alert('Ver projeto: ${p.id_projeto}')">Ver</button>
+                  <button class="btn btn-primary btn-sm" onclick="window.location.href='registro/ver_projeto.html?id=${p.id_projeto}'">Saiba mais</button>
                 </div>
               </div>
               <div class="card-footer text-muted small">
