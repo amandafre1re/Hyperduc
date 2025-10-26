@@ -1,4 +1,4 @@
-CREATE DATABASE voluntec;
+CREATE DATABASE voluntech;
 
 CREATE TABLE usuario (
   id_usuario INT NOT NULL AUTO_INCREMENT,

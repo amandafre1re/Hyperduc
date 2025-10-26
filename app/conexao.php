@@ -2,7 +2,7 @@
     $host = "localhost";
     $user = "root";
     $password = "";
-    $db = "hyperduc";
+    $db = "voluntech";
     $conn = new mysqli($host, $user, $password, $db);
      
     if($conn->connect_error){
