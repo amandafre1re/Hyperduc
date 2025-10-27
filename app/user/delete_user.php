@@ -1,17 +1,23 @@
 <?php
 session_start();
-include_once '../conexao.php';
+include_once '../connection.php';
 
-if (!isset($_SESSION['usuario_id'])) {
+if (!isset($_SESSION['user_id'])) {
     echo json_encode(['codigo' => false, 'msg' => 'Usuário não logado.']);
     exit;
 }
 
-$id = $_SESSION['usuario_id'];
+$id = $_SESSION['user_id'];
 
+// Delete user's skills first
+$sql_skills = "DELETE FROM user_skill WHERE id_user = ?";
+$stmt_skills = $conn->prepare($sql_skills);
+$stmt_skills->bind_param("i", $id);
+$stmt_skills->execute();
+$stmt_skills->close();
 
-// Excluir projetos do usuário primeiro
-$sql_projetos = "DELETE FROM projeto WHERE id_usuario = ?";
+// Delete user's projects first
+$sql_projetos = "DELETE FROM project WHERE id_user = ?";
 $stmt_projetos = $conn->prepare($sql_projetos);
 $stmt_projetos->bind_param("i", $id);
 if (!$stmt_projetos->execute()) {
@@ -22,8 +28,8 @@ if (!$stmt_projetos->execute()) {
 }
 $stmt_projetos->close();
 
-// Agora excluir o usuário
-$sql_usuario = "DELETE FROM usuario WHERE id_usuario = ?";
+// Now delete the user
+$sql_usuario = "DELETE FROM user WHERE id_user = ?";
 $stmt_usuario = $conn->prepare($sql_usuario);
 $stmt_usuario->bind_param("i", $id);
 if ($stmt_usuario->execute()) {

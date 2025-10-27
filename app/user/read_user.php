@@ -1,18 +1,18 @@
 <?php
 session_start();
-include_once '../conexao.php';
+include_once '../connection.php';
 
 $resposta = [];
 
-if (!isset($_SESSION['usuario_id'])) {
+if (!isset($_SESSION['user_id'])) {
     $resposta['codigo'] = false;
     $resposta['msg'] = 'Usuário não logado.';
     echo json_encode($resposta);
     exit;
 }
 
-$id = $_SESSION['usuario_id'];
-$sql = "SELECT nome_usuario, email_usuario, cidade, uf, pais FROM usuario WHERE id_usuario = ?";
+$id = $_SESSION['user_id'];
+$sql = "SELECT name_user, email_user, city, uf, country FROM user WHERE id_user = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
 $stmt->execute();
